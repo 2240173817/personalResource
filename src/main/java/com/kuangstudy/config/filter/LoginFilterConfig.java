@@ -1,6 +1,10 @@
 package com.kuangstudy.config.filter;
 
+import freemarker.template.Configuration;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.ui.Model;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -18,7 +22,7 @@ import java.io.IOException;
  *
  * @see
  */
-@WebFilter(filterName = "loginFilter",urlPatterns = {"/api/*"})
+@WebFilter(filterName = "loginFilter",urlPatterns = {"/api/*","/index"})
 public class LoginFilterConfig implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -31,8 +35,9 @@ public class LoginFilterConfig implements Filter {
         HttpServletResponse resp = (HttpServletResponse) servletResponse;
         HttpSession session = req.getSession();
         Object quanxian = session.getAttribute("quanxian");
+        System.out.println(quanxian);
         System.out.println("进来了");
-        if (quanxian == null){
+        if (quanxian == null & quanxian != "lili"){
             resp.sendRedirect("/login");
             return;
         }

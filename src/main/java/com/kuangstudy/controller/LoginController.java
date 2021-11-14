@@ -1,7 +1,15 @@
 package com.kuangstudy.controller;
 
+import com.kuangstudy.entity.User;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author 飞哥
@@ -19,4 +27,18 @@ public class LoginController {
 
         return "login";
     }
+
+    @PostMapping("/loginlink")
+    public String  loginLink(User user, HttpServletRequest request, Model model) {
+        if (user.getPassword().equals("22")){
+            request.getSession().setAttribute("quanxian","lili");
+            ModelAndView mv = new ModelAndView();
+            mv.addObject("ss", 200);
+            mv.setViewName("index");
+        }else
+        System.out.println(user);
+
+        return "index";
+    }
+
 }

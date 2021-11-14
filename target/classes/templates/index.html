@@ -19,10 +19,10 @@
    </div>
   </div>
   <div class="square-title">
-   健康丽丽中心
+   Mou小可爱的广场
   </div>
   <div class="square-desc">
-   即刻获取健康资源，养生快人一步
+   即刻获取常用设计资源，设计快人一步
   </div>
   <div class="square-operation">
    <div class="square-operation-container">
@@ -80,7 +80,7 @@
    </div>
   </div>
   <div v-if="total==0" style="text-align: center;font-size: 48px;">
-    <div>数据还在造就中...</div>
+    <div>数据还在造就中... ${ss}</div>
   </div>
   <div class="square-loading" v-if="total>0">
    <div style="color: #fff;">总共有：{{total}}条记录，总{{pages}}页,当前是：{{pageNo}}，每页显示：{{pageSize}}</div>
@@ -106,7 +106,7 @@
    pageNo:1,
    total:0,
    pages:0,
-   pageSize:4
+   pageSize:4,
   },
   created: function () {
    // 用ajax异步执行获取博客分类内容

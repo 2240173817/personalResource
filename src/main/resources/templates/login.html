@@ -33,10 +33,10 @@
          <a   href="/files/register" class="button-text">注册</a>
         </div>
        </div>
-       <div   class="login-form-wrap">
+       <form action="/loginlink" method="post" class="login-form-wrap" >
         <div data-v-7f5e281c=""  class="container" >
          <!---->
-         <input data-v-7f5e281c="" placeholder="邮箱" type="text" class="input_init container_error mas-form-input-large" />
+         <input data-v-7f5e281c="" placeholder="邮箱" type="text" name="email" class="input_init container_error mas-form-input-large" />
          <div data-v-7f5e281c="" class="slot_content"></div>
          <div data-v-7f5e281c="" class="error_label" style="color: rgb(224, 95, 66);">
           <div data-v-7f5e281c="" class="icon">
@@ -51,7 +51,7 @@
         </div>
         <div data-v-7f5e281c=""  class="container" >
          <!---->
-         <input data-v-7f5e281c="" placeholder="密码" type="password" class="input_init container_error mas-form-input-large" />
+         <input data-v-7f5e281c="" placeholder="密码"  name="password" type="password" class="input_init container_error mas-form-input-large" />
          <div data-v-7f5e281c="" class="slot_content"></div>
          <div data-v-7f5e281c="" class="error_label" style="color: rgb(224, 95, 66);">
           <div data-v-7f5e281c="" class="icon">
@@ -66,7 +66,7 @@
         </div>
         <button   class="m-button m-button--lg m-button--highlight" style="width: 100%; padding: 0px;">
          <!----> <span  class="m-button__content">登录</span></button> 
-       </div> 
+       </form>
        <div   class="or h3">
         <span  >或</span>
        </div>
@@ -80,6 +80,23 @@
       </div> 
      </div> 
     </div> </span> 
-  </div>  
+  </div>
+
+  <script src="/js/vue.min.js"></script>
+  <script src="/js/axios.min.js"></script>
+  <script>
+   var vue = new Vue({
+    el: "#app",
+    data: {
+
+    },
+    created: function () {
+
+    },
+    methods: {
+
+    }
+   })
+  </script>
  </body>
 </html>
